@@ -71,3 +71,16 @@ class PhasedSplit(QuantumEffect):
         yield cirq.ISWAP(objects[0].qubit, objects[1].qubit) ** 0.5
         yield cirq.ISWAP(objects[0].qubit, objects[2].qubit) ** 0.5
         yield cirq.ISWAP(objects[0].qubit, objects[2].qubit) ** 0.5
+        
+
+class NormalMove(QuantumEffect):
+    """swaps the contents of two lilipads"""
+
+    def num_dimension(self) -> Optional[int]:
+        return 2
+
+    def num_objects(self):
+        return 2
+
+    def effect(self, *objects):
+        yield cirq.ISWAP(objects[0].qubit, objects[1].qubit)
