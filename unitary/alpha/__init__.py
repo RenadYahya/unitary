@@ -29,6 +29,7 @@ from unitary.alpha.qubit_effects import (
     PhasedSplit,
     Superposition,
     Split,
+    NormalMove,
 )
 
 from unitary.alpha.quantum_object import (
